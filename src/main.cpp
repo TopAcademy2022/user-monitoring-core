@@ -12,7 +12,8 @@ bool TaskManager::TerminateProcessbyProgramName(char* programName)
     if (hSnapshot == INVALID_HANDLE_VALUE) return false;
 
     PROCESSENTRY32 processEntry;
-    pe.dwSize = sizeof(PROCESSENTRY32);
+    processEntry.dwSize = sizeof(PROCESSENTRY32);
+
 
     if (Process32First(hSnapshot, &processEntry))
     {
@@ -22,7 +23,7 @@ bool TaskManager::TerminateProcessbyProgramName(char* programName)
 
             if (_stricmp(processEntry.szExeFile, fullProgramName) == 0)
             {
-                HANDLE hProcess = OpenProcess(PROCESS_TERMINATE, FALSE, pe.th32ProcessID);
+                HANDLE hProcess = OpenProcess(PROCESS_TERMINATE, FALSE, processEntry.th32ProcessID);
                 if (hProcess != NULL) 
                 {
                     TerminateProcess(hProcess, 0);
