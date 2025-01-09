@@ -28,9 +28,12 @@ jobs:
 
     - name: Run Linux build
       if: runner.os == 'Linux'
-      run: bash build/build-linux.sh
+      run: |
+        cd build
+        ./build-linux.sh
 
     - name: Run Windows build
       if: runner.os == 'Windows'
-      run: ./build/build-windows.bat
-        
+      run: |
+        cd build
+        ./build-windows.bat
