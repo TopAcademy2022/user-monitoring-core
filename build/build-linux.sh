@@ -7,6 +7,7 @@ CMAKE_PRE_BUILD_COMMAND="cmake ../../"
 CMAKE_BUILD_COMMAND="cmake --build ."
 CORE_LIB_NAME="user-monitoring-core.so"
 
+ls
 eval $CMAKE_PRE_BUILD_COMMAND
 eval $CMAKE_BUILD_COMMAND
 
