@@ -30,7 +30,7 @@ jobs:
       if: runner.os == 'Linux'
       run: |
         cd build
-        ./build-linux.sh
+        bash build-linux.sh
 
     - name: Run Windows build
       if: runner.os == 'Windows'
