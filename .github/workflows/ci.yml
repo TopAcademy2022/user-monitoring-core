@@ -28,8 +28,8 @@ jobs:
 
     - name: Run build batch file
       run: |
-        if [["${{ runner.os }}" == "Windows"]]; then
-            call build/build.bat
+        if [ "${{ runner.os }}" == "Windows" ]; then
+            call build/build-windows.bat
           else
-            bash build/build.bat
+            bash build/build-linux.sh
           fi
