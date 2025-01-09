@@ -13,3 +13,6 @@ CMakeUserPresets.json
 
 # Default build directory
 build/project/*
+
+# Build lib name
+user-monitoring-core.dll
