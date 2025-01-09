@@ -14,5 +14,5 @@ if exist '%CORE_LIB_NAME%' (
     echo Core library exist
 )
 else (
-    copy %CORE_LIB_NAME% ..\..\
+    copy %CORE_LIB_NAME% ..\..\ && exit 0 || exit 1
 )
