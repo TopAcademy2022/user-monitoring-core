@@ -26,10 +26,11 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Run build batch file
-      run: |
-        if [ "${{ runner.os }}" == "Linux" ]; then
-          bash build/build-linux.sh
-        else
-          call build/build-windows.bat
-        fi
+    - name: Run Linux build
+      if: runner.os == 'Linux'
+      run: bash build/build-linux.sh
+
+    - name: Run Windows build
+      if: runner.os == 'Windows'
+      run: ./build/build-windows.bat
+        
