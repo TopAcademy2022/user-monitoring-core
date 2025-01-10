@@ -18,7 +18,8 @@ BUILD_DIR="project"
 # Run cmake build for library
 CMAKE_PRE_BUILD_COMMAND="cmake -DCMAKE_BUILD_TYPE=${BUILD_TYPE} ../../"
 CMAKE_BUILD_COMMAND="cmake --build . --config ${BUILD_TYPE}"
-CORE_LIB_NAME="user-monitoring-core.dll"
+CORE_OLD_LIB_NAME="libuser-monitoring-core.so"
+CORE_LIB_NAME="user-monitoring-core.so"
 
 # Check for the first argument
 if [ -z "\$1" ]; then
@@ -35,10 +36,10 @@ cd "$BUILD_DIR" || exit 1
 eval "$CMAKE_PRE_BUILD_COMMAND"
 eval "$CMAKE_BUILD_COMMAND"
 
-cd "$BUILD_TYPE" || exit 1
-
 # Check if the core library exists and handle accordingly
 if [ -e "$CORE_LIB_NAME" ]; then
+    # Rename library
+    mv "$CORE_OLD_LIB_NAME" "$CORE_LIB_NAME"
     cp "$CORE_LIB_NAME" "$START_DIR"
 
     if [ "$EXIT_STRATEGY" == "AfterLastCommand" ]; then

@@ -24,12 +24,12 @@ if "%1"=="" (
 mkdir %BUILD_DIR%
 cd %BUILD_DIR% || exit 1
 
-powershell -Command "%CMAKE_PRE_BUILD_COMMAND%"
-powershell -Command "%CMAKE_BUILD_COMMAND%"
+powershell -Command "%CMAKE_PRE_BUILD_COMMAND%" || exit 1
+powershell -Command "%CMAKE_BUILD_COMMAND%" || exit 1
 
 cd %BUILD_TYPE% || exit 1
 if exist "%CORE_LIB_NAME%" (
-    copy "%CORE_LIB_NAME%" "%START_DIR%"
+    copy "%CORE_LIB_NAME%" "%START_DIR%" || exit 1
 
     if "%EXIT_STRATEGY%"=="AfterLastCommand" (
         exit 0
