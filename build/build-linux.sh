@@ -36,10 +36,11 @@ cd "$BUILD_DIR" || exit 1
 eval "$CMAKE_PRE_BUILD_COMMAND"
 eval "$CMAKE_BUILD_COMMAND"
 
+# Rename library
+mv "$CORE_OLD_LIB_NAME" "$CORE_LIB_NAME"
+
 # Check if the core library exists and handle accordingly
 if [ -e "$CORE_LIB_NAME" ]; then
-    # Rename library
-    mv "$CORE_OLD_LIB_NAME" "$CORE_LIB_NAME"
     cp "$CORE_LIB_NAME" "$START_DIR"
 
     if [ "$EXIT_STRATEGY" == "AfterLastCommand" ]; then
