@@ -19,11 +19,16 @@
 #   define PUBLIC_FUNCTION IMPORT
 #endif
 
+#include <windows.h>    
+#include <tlhelp32.h>  
+#include <cstring>
+#include <cstdio>
+
 
 class TaskManager
 {
-private:
-    bool TerminateProcess(char* programName);
+public:
+    bool TerminateProcessbyProgramName(char* programName);
 };
 
 EXPORT void TerminateProcessByProgName(char* progName);
