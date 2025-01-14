@@ -2,6 +2,8 @@
     // Microsoft
     #define EXPORT extern "C" __declspec(dllexport)
     #define IMPORT __declspec(dllimport)
+    #include <windows.h>
+    #include <tlhelp32.h>
 #elif defined(__GNUC__)
     // GCC
     #define EXPORT __attribute__((visibility("default")))
@@ -19,8 +21,7 @@
 #   define PUBLIC_FUNCTION IMPORT
 #endif
 
-#include <windows.h>    
-#include <tlhelp32.h>  
+
 #include <cstring>
 #include <cstdio>
 
