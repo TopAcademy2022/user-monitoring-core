@@ -11,7 +11,7 @@ set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 set (FIRST_BOOST_INSTALL ON)
 
 # Include default library/boost_1_80_0
-include(./library/CMakeLists.txt)
+include(./lib/CMakeLists.txt)
 
 # Only find static libs
 set(Boost_USE_STATIC_LIBS ON)

@@ -8,7 +8,7 @@ set source='https://sourceforge.net/projects/boost/files/boost/1.80.0/boost_1_80
 set fileName='boost_1_80_0.zip'
 
 :: Remarks Directory for extracting Boost library
-set extractedFolderPath='../library'
+set extractedFolderPath='../lib'
 
 :: Remarks Download the file
 powershell -Command "(New-Object Net.WebClient).DownloadFile(%source%, %fileName%)"

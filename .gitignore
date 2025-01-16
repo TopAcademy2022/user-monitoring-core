@@ -16,3 +16,6 @@ build/project/*
 
 # Build lib name
 user-monitoring-core.dll
+
+lib/boost_1_80_0
+lib/install_boost_1_80_0

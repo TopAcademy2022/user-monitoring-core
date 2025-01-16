@@ -2,7 +2,7 @@
 @echo ON
 
 :: Remarks Folder with Boost library name
-set folderName=../library/boost_1_80_0
+set folderName=../lib/boost_1_80_0
 
 :: Remarks Init Boost library before install
 set boostLibraryIniScriptName=bootstrap.bat
